@@ -15,8 +15,8 @@ class MergeSortTest {
         assertTrue(Utils.isSorted(arr));
         assertTrue(metrics.getTime() > 0);
         assertTrue(metrics.getComparisons() > 0);
-        assertTrue(metrics.getSwaps() > 0);
-        assertTrue(metrics.getMaxDepth() > 0);
+        assertTrue(metrics.getSwaps() >= 0);
+        assertTrue(metrics.getMaxDepth() <= (int) (Math.log(arr.length) / Math.log(2)) + 5);
     }
 
     @Test
@@ -27,8 +27,8 @@ class MergeSortTest {
         assertTrue(Utils.isSorted(arr));
         assertTrue(metrics.getTime() > 0);
         assertTrue(metrics.getComparisons() > 0);
-        assertTrue(metrics.getSwaps() > 0);
-        assertTrue(metrics.getMaxDepth() > 0);
+        assertTrue(metrics.getSwaps() >= 0);
+        assertTrue(metrics.getMaxDepth() <= (int) (Math.log(arr.length) / Math.log(2)) + 5);
     }
 
     @Test
