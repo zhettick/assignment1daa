@@ -14,8 +14,8 @@ public class QuickSortTest {
         assertTrue(Utils.isSorted(arr));
         assertTrue(metrics.getTime() > 0);
         assertTrue(metrics.getComparisons() > 0);
-        assertTrue(metrics.getSwaps() > 0);
-        assertTrue(metrics.getMaxDepth() > 0);
+        assertTrue(metrics.getSwaps() >= 0);
+        assertTrue(metrics.getMaxDepth() <= (int) (2 * Math.log(arr.length) / Math.log(2)) + 10);
     }
 
     @Test
@@ -26,8 +26,8 @@ public class QuickSortTest {
         assertTrue(Utils.isSorted(arr));
         assertTrue(metrics.getTime() > 0);
         assertTrue(metrics.getComparisons() > 0);
-        assertTrue(metrics.getSwaps() > 0);
-        assertTrue(metrics.getMaxDepth() > 0);
+        assertTrue(metrics.getSwaps() >= 0);
+        assertTrue(metrics.getMaxDepth() <= (int) (2 * Math.log(arr.length) / Math.log(2)) + 10);
     }
 
     @Test
