@@ -1,0 +1,2 @@
+Algorithm,Size,Time(ms),MaxDepth,Comparisons,Swaps
+quicksort,10000,3.604708,30,148814,87370
