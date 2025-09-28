@@ -6,6 +6,7 @@ public class Utils {
         swap(arr, pivot, end, metrics);
         pivot = arr[end];
         int current = start;
+
         for (int i = start; i < end; i++) {
             metrics.addComparison();
             if (arr[i] <= pivot) {
@@ -14,6 +15,7 @@ public class Utils {
             }
         }
         swap(arr, current, end, metrics);
+
         return current;
     }
 
@@ -37,6 +39,7 @@ public class Utils {
         for (int i = 1; i < arr.length; i++) {
             if (arr[i - 1] > arr[i]) return false;
         }
+
         return true;
     }
 }
