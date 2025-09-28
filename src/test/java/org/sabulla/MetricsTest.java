@@ -1,5 +1,7 @@
+package org.sabulla;
+
 import org.junit.jupiter.api.Test;
-import org.sabulla.Metrics;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class MetricsTest {

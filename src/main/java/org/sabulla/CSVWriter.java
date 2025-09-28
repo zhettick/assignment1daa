@@ -12,7 +12,7 @@ public class CSVWriter {
             if (!fileExists) {
                 writer.write("Algorithm,Size,Time(ms),MaxDepth,Comparisons,Swaps\n");
             }
-            writer.write(algorithm + "," + length + "," + metrics.getTime() + "," + metrics.getMaxDepth() + "," + metrics.getComparisons() + "," + metrics.getSwaps() + "\n");
+            writer.write(algorithm + "," + length + "," + metrics.getTime() / 1000000.0 + "," + metrics.getMaxDepth() + "," + metrics.getComparisons() + "," + metrics.getSwaps() + "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }

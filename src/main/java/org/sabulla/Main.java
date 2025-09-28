@@ -5,9 +5,11 @@ public class Main {
         String name = args[0];
         int size = Integer.parseInt(args[1]);
         int[] arr = new int[size];
+
         for (int i = 0; i < size; i++) {
             arr[i] = (int) (Math.random() * 10000);
         }
+
         Metrics metrics = new Metrics();
 
         switch (name) {
@@ -19,7 +21,7 @@ public class Main {
                 break;
             case "select":
                 int index = Integer.parseInt(args[2]);
-                Select.select(arr, 0, arr.length - 1, index, metrics);
+                Select.runSelect(arr, index, metrics);
                 break;
             case "closestpair":
                 Point[] points = new Point[size];
@@ -29,13 +31,16 @@ public class Main {
                 ClosestPair.closestPair(points, metrics);
                 break;
         }
+
         String csvFile = "results.csv";
         CSVWriter.write(csvFile, name, size, metrics);
+
         System.out.println("Algorithm: " + name);
         System.out.println("Size: " + size);
-        System.out.println("Time: " + metrics.getTime() + " ms");
+        System.out.println("Time: " + metrics.getTime());
+        System.out.println("Time: " + metrics.getTime() / 1000000.0 + " ms");
+        System.out.println("Depth: " + metrics.getMaxDepth());
         System.out.println("Comparisons: " + metrics.getComparisons());
         System.out.println("Swaps: " + metrics.getSwaps());
-        System.out.println("Depth: " + metrics.getMaxDepth());
     }
 }
